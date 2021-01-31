@@ -24,11 +24,10 @@ class Game extends React.Component{
     
   }
   render() {
-    let isPvP=this.state.isPvP;
     let status=<span>Next player: </span>;
     let winner=calculateWinner(this.state.squares);
-    
-    if(this.state.isPvP==false&&this.state.xIsNext){
+
+    if(this.state.isPvP===false&&this.state.xIsNext){
       let t=findNextValue(this.state.squares);
       this.handleClick(t);
     }
@@ -87,19 +86,19 @@ function calculateWinner(arr) {
 
       kt=0;
       for(let k=i;k<=r;k++) if(t[k][j]===t[i][j]) kt++;else break;
-      if(kt==5) return t[i][j];
+      if(kt===5) return t[i][j];
 
       kt=0;
       for(let k=j;k<=u;k++) if(t[i][k]===t[i][j]) kt++;else break;
-      if(kt==5) return t[i][j];
+      if(kt===5) return t[i][j];
 
       kt=0;
       for(let k=0;k<=ru;k++) if(t[i+k][j+k]===t[i][j]) kt++;else break;
-      if(kt==5) return t[i][j];
+      if(kt===5) return t[i][j];
 
       kt=0;
       for(let k=0;k<=ul;k++) if(t[i-k][j+k]===t[i][j]) kt++;else break;
-      if(kt==5) return t[i][j];
+      if(kt===5) return t[i][j];
     }
   return null;
 }

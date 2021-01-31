@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Square from './components/Square';
-import Board from './components/Board';
 import Game from './components/Game'
 
 
